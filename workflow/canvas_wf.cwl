@@ -24,7 +24,7 @@ outputs:
 
 steps:
   samtools_tumor_cram2bam:
-    run: ./samtools_cram2bam.cwl
+    run: ../tools/samtools_cram2bam.cwl
     in: 
       input_reads: input_tumor_file
       threads: threads
@@ -32,7 +32,7 @@ steps:
     out: [bam_file]
 
   samtools_normal_cram2bam:
-    run: ./samtools_cram2bam.cwl
+    run: ../tools/samtools_cram2bam.cwl
     in: 
       input_reads: input_normal_file
       threads: threads
@@ -40,7 +40,7 @@ steps:
     out: [bam_file]
 
   canvas: 
-    run: ./canvas.cwl
+    run: ../tools/canvas.cwl
     in:
       tumor_bam: samtools_tumor_cram2bam/bam_file
       manifest: manifest
@@ -49,6 +49,7 @@ steps:
       sample_name: sample_name
       output_dir: output_dir
       reference: reference
-      genome_folder: genome_folder
+      genomeSize_file: genomeSize_file
+      genome_fasta: genome_fasta
       filter_bed: filter_bed
     out: [output_vcf, output_txt]
