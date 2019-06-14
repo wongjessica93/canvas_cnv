@@ -21,7 +21,6 @@ outputs:
   canvas_cnv_vcf: {type: File, outputSource: canvas/output_vcf}
   canvas_coverage_txt: {type: File, outputSource: canvas/output_txt}
 
-
 steps:
   samtools_tumor_cram2bam:
     run: ../tools/samtools_cram2bam.cwl
@@ -53,3 +52,9 @@ steps:
       genome_fasta: genome_fasta
       filter_bed: filter_bed
     out: [output_vcf, output_txt]
+
+$namespaces:
+  sbg: https://sevenbridges.com
+hints:
+  - class: 'sbg:maxNumberOfParallelInstances'
+    value: 2
