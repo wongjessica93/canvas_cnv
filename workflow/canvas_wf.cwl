@@ -12,7 +12,7 @@ inputs:
   manifest: {type: File, label: Nextera manifest file }
   b_allele_vcf: {type: File, label: vcf containing SNV b-alleles sites (only sites with PASS will be used)}
   sample_name: string
-  output_dir: string
+  output_basename: string
   reference: {type: File, label: Canvas-ready kmer file}
   genomeSize_file: {type: File, label: GenomeSize.xml}
   genome_fasta: {type: File, label: Genome.fa}
@@ -46,7 +46,7 @@ steps:
       control_bam: samtools_normal_cram2bam/bam_file
       b_allele_vcf: b_allele_vcf
       sample_name: sample_name
-      output_dir: output_dir
+      output_basename: output_basename
       reference: reference
       genomeSize_file: genomeSize_file
       genome_fasta: genome_fasta

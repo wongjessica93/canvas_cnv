@@ -4,7 +4,7 @@ id: canvas
 requirements:
   - class: ShellCommandRequirement
   - class: DockerRequirement
-    dockerPull: 'migbro/canvas:1.11.0'
+    dockerPull: 'kfdrc/canvas:1.11.0'
   - class: ResourceRequirement
     ramMin: 32000
     coresMin: 16
@@ -19,7 +19,7 @@ arguments:
       --manifest=$(inputs.manifest.path)
       --control-bam=$(inputs.control_bam.path)
       --b-allele-vcf=$(inputs.b_allele_vcf.path)
-      --sample_name=$(inputs.sample_name)
+      --sample-name=$(inputs.sample_name)
       --genome-folder=$(inputs.genome_fasta.dirname)
       -o ./
       -r $(inputs.reference.path)
