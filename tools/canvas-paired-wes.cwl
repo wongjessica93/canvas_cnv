@@ -30,6 +30,8 @@ arguments:
 
       mv CNV.CoverageAndVariantFrequency.txt $(inputs.output_basename).canvas.CNV.CoverageAndVariantFrequency.txt
 
+      tar -czf TempCNV_$(inputs.sample_name).tar.gz
+      TempCNV_$(inputs.sample_name)
 
 inputs:
   tumor_bam: {type: File, label: tumor bam file, secondaryFiles: [.bai]}
@@ -53,3 +55,9 @@ outputs:
     type: File
     outputBinding:
       glob: '*.CNV.CoverageAndVariantFrequency.txt'
+  output_folder:
+    type: File
+    outputBinding:
+      glob: '*.tar.gz'
+
+  

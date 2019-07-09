@@ -39,7 +39,7 @@ steps:
     out: [bam_file]
 
   canvas: 
-    run: ../tools/canvas.cwl
+    run: ../tools/canvas-paired-wes.cwl
     in:
       tumor_bam: samtools_tumor_cram2bam/bam_file
       manifest: manifest
