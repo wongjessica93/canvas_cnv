@@ -19,6 +19,7 @@ arguments:
       --manifest=$(inputs.manifest.path)
       --control-bam=$(inputs.control_bam.path)
       --b-allele-vcf=$(inputs.b_allele_vcf.path)
+      --exclude-non-het-b-allele-sites
       --sample-name=$(inputs.sample_name)
       --genome-folder=$(inputs.genome_fasta.dirname)
       -o ./

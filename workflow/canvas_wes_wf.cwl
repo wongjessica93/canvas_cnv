@@ -7,16 +7,16 @@ requirements:
 
 inputs:
   input_tumor_file: {type: File, secondaryFiles: [.crai]}
-  input_normal_file: {type: ['null', File], label: Bam file of unmatched control sample (optional), secondaryFiles: [.crai] }
+  input_normal_file: {type: ['null', File], doc: "Bam file of unmatched control sample (optional)", secondaryFiles: [.crai] }
   threads: {type: int}
-  manifest: {type: File, label: Nextera manifest file }
-  b_allele_vcf: {type: File, label: vcf containing SNV b-alleles sites (only sites with PASS will be used)}
+  manifest: {type: File, doc: "Nextera manifest file" }
+  b_allele_vcf: {type: File, doc: "vcf containing SNV b-alleles sites (only sites with PASS will be used)"}
   sample_name: string
   output_basename: string
-  reference: {type: File, label: Canvas-ready kmer file}
-  genomeSize_file: {type: File, label: GenomeSize.xml}
-  genome_fasta: {type: File, label: Genome.fa}
-  filter_bed: {type: File, label: bed file of regions to skip}
+  reference: {type: File, doc: "Canvas-ready kmer file"}
+  genomeSize_file: {type: File, doc: "GenomeSize.xml"}
+  genome_fasta: {type: File, doc: "Genome.fa"}
+  filter_bed: {type: File, doc: "bed file of regions to skip"}
 outputs:
   canvas_cnv_vcf: {type: File, outputSource: canvas/output_vcf}
   canvas_coverage_txt: {type: File, outputSource: canvas/output_txt}
