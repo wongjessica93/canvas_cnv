@@ -1,6 +1,6 @@
 cwlVersion: v1.0
 class: Workflow
-id: canvas_wes_wf
+id: canvas_wes_cnv_wf
 requirements:
   - class: ScatterFeatureRequirement
   - class: MultipleInputFeatureRequirement
