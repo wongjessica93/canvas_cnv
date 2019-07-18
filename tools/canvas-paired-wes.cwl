@@ -16,11 +16,10 @@ arguments:
     valueFrom: >-
       /1.11.0/Canvas.exe Somatic-Enrichment
       -b $(inputs.tumor_bam.path)
-      --manifest=$(inputs.manifest.path)
       ${ 
-        var arg = "--manifest=" + $(inputs.manifest.path)
+        var arg = "--manifest=" + inputs.manifest.path
         if (inputs.control_bam != null) {
-          arg += " --control-bam=" + $(inputs.control_bam.path)
+          arg += " --control-bam=" + inputs.control_bam.path
         }
         return arg
       }
