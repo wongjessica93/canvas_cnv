@@ -20,9 +20,9 @@ arguments:
 
       ${ 
         if (inputs.control_bam != null) {
-      // --control-bam=$(inputs.control_bam.path)
-
+          var arg = "--control-bam=" + $(inputs.control_bam.path)
         }
+        return arg
       }
 
       --b-allele-vcf=$(inputs.b_allele_vcf.path)
