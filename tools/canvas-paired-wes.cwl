@@ -17,14 +17,13 @@ arguments:
       /1.11.0/Canvas.exe Somatic-Enrichment
       -b $(inputs.tumor_bam.path)
       --manifest=$(inputs.manifest.path)
-
       ${ 
+        var arg = "--manifest=" + $(inputs.manifest.path)
         if (inputs.control_bam != null) {
-          var arg = "--control-bam=" + $(inputs.control_bam.path)
+          arg += " --control-bam=" + $(inputs.control_bam.path)
         }
         return arg
       }
-
       --b-allele-vcf=$(inputs.b_allele_vcf.path)
       --exclude-non-het-b-allele-sites
       --sample-name=$(inputs.sample_name)
